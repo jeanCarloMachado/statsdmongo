@@ -18,4 +18,4 @@ EXPOSE 8125
 EXPOSE 8126
 
 ADD mongo /usr/local/statsdmongo
-CMD /usr/bin/mongod & /usr/bin/node /usr/local/lib/node_modules/statsd/bin/statsd /usr/local/statsdmongo/config.js & 
+ENTRYPOINT /usr/bin/mongod & sleep 10 ; /usr/bin/node /usr/local/lib/node_modules/statsd/bin/statsd /usr/local/statsdmongo/config.js 
